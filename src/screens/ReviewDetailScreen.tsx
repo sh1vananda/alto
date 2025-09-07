@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "@lynx-js/react";
 import { client, urlFor } from "../lib/sanity.client.js";
-import { PortableText } from "@portabletext/react";
-import RadarChart from "../components/RadarChart";
-import BooGauge from "../components/BooGauge";
+import PortableTextLynx from "../components/PortableTextLynx.js";
+import RadarChart from "../components/RadarChart.js";
+import BooGauge from "../components/BooGauge.js";
+import type { BooGaugeData } from "../components/BooGauge.js";
 
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import type { PortableTextBlock } from "@portabletext/types";
@@ -12,7 +13,7 @@ import type {
   NavigateFunction,
   GoBackFunction,
   NavParams,
-} from "../navigation/AppNavigator";
+} from "../navigation/AppNavigator.js";
 
 interface FullReview {
   title: string;
@@ -50,7 +51,19 @@ interface ReviewDetailScreenProps {
   };
 }
 
-const reviewQuery = `*[_type == "review" && slug.current == $slug][0]{ ... }`;
+const reviewQuery = `*[_type == "review" && slug.current == $slug][0]{
+  title,
+  releaseDate,
+  score,
+  moviePoster,
+  heroImage,
+  body,
+  storytelling, character, visuals, sound,
+  performances, direction, impact, themes,
+  execution, originality, mainBooGauge,
+  dread, jumpScares, gore, psychological,
+  atmosphere, lingeringEffect
+}`;
 
 export default function ReviewDetailScreen({
   route,
@@ -100,7 +113,7 @@ export default function ReviewDetailScreen({
     review.execution || 0,
     review.originality || 0,
   ];
-  const booGaugeData = {
+  const booGaugeData: BooGaugeData = {
     mainBooGauge: review.mainBooGauge,
     dread: review.dread,
     jumpScares: review.jumpScares,
@@ -120,7 +133,9 @@ export default function ReviewDetailScreen({
           className="HeroImage"
         />
         <view className="BackButton" bindtap={navigation.goBack}>
-          <text style={{ color: "#FFF", fontSize: 24 }}>&lt;</text>
+          <text style={{ color: "#FFF", fontSize: 24, fontWeight: "bold" }}>
+            &lt;
+          </text>
         </view>
       </view>
 
@@ -140,7 +155,7 @@ export default function ReviewDetailScreen({
       </view>
 
       <view className="BodyContainer">
-        <PortableText value={review.body} />
+        <PortableTextLynx value={review.body} />
       </view>
     </view>
   );
