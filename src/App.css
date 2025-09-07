@@ -1,13 +1,76 @@
 /* src/App.css */
+
+.Container {
+  flex: 1;
+  background-color: #111111;
+}
+
+.HeaderTitle {
+  font-size: 32px;
+  color: #ededed;
+  padding: 16px;
+}
+
+.LoadingContainer,
+.CenterContainer {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+}
+
+.Grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.CardContainer {
+  width: 48%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.Poster {
+  width: 100%;
+  aspect-ratio: 0.666;
+}
+
+.TextOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Score {
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
 .HeroContainer {
   position: relative;
   width: 100%;
   height: 250px;
 }
+
 .HeroImage {
   width: 100%;
   height: 100%;
 }
+
 .BackButton {
   position: absolute;
   top: 40px;
@@ -20,20 +83,98 @@
   justify-content: center;
   align-items: center;
 }
+
 .HeaderContent {
   padding: 16px;
 }
+
 .Subtitle {
   color: #a0a0a0;
   font-size: 16px;
   margin-top: 4px;
 }
+
+.BodyContainer {
+  padding: 16px;
+}
+
 .VizContainer {
   margin: 16px;
-  padding: 8px;
+  padding: 16px;
   background-color: #222222;
   border-radius: 8px;
 }
-.BodyContainer {
-  padding: 16px;
+
+.BooGaugeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.MainGaugeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.MainScoreCircle {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  border: 8px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.MainScoreText {
+  color: #ededed;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.SubGaugeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 20px;
+}
+
+.FingerprintContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.GaugeItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.GaugeItemLabel {
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+.GaugeItemScore {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ededed;
+}
+
+.ProgressBarBackground {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  height: 8px;
+}
+
+.ProgressBarForeground {
+  background-color: #ededed;
+  height: 8px;
+  border-radius: 9999px;
 }

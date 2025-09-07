@@ -1,66 +1,35 @@
 // src/components/RadarChart.tsx
 
-import {
-  Chart as ChartJS,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import type { ChartData } from "chart.js";
-import { Radar } from "react-chartjs-2";
 import { attributeLabels } from "./chart.config";
 
-ChartJS.register(
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend
-);
+const AttributeRow = ({ label, score }: { label: string; score: number }) => {
+  const percentage = score * 10;
+  return (
+    <view className="GaugeItemContainer">
+      <view className="GaugeItemHeader">
+        <text className="GaugeItemLabel">{label}</text>
+        <text className="GaugeItemScore">{score}/10</text>
+      </view>
+      <view className="ProgressBarBackground">
+        <view
+          className="ProgressBarForeground"
+          style={{ width: `${percentage}%` }}
+        />
+      </view>
+    </view>
+  );
+};
 
 interface RadarChartProps {
   data: number[];
 }
 
 export default function RadarChart({ data }: RadarChartProps) {
-  const chartData: ChartData<"radar"> = {
-    labels: attributeLabels,
-    datasets: [
-      {
-        label: "Fingerprint Score",
-        data: data,
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        borderColor: "rgba(255, 255, 255, 1)",
-        borderWidth: 2,
-        pointBackgroundColor: "rgb(255, 255, 255)",
-        pointBorderColor: "#fff",
-        pointHoverBackgroundColor: "#fff",
-        pointHoverBorderColor: "rgb(255, 99, 132)",
-      },
-    ],
-  };
-
-  const options = {
-    scales: {
-      r: {
-        angleLines: { color: "rgba(255, 255, 255, 0.2)" },
-        grid: { color: "rgba(255, 255, 255, 0.2)" },
-        pointLabels: { color: "#A0A0A0", font: { size: 12 } },
-        ticks: { color: "#111111", backdropColor: "#111111", stepSize: 2 },
-        suggestedMin: 0,
-        suggestedMax: 10,
-      },
-    },
-    plugins: {
-      legend: { display: false },
-    },
-    maintainAspectRatio: false,
-    responsive: true,
-  };
-
-  return <Radar data={chartData} options={options} />;
+  return (
+    <view className="FingerprintContainer">
+      {attributeLabels.map((label, index) => (
+        <AttributeRow key={label} label={label} score={data[index] || 0} />
+      ))}
+    </view>
+  );
 }
