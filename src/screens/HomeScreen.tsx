@@ -45,14 +45,15 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   }
 
   return (
-    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
+    <view className="SafeArea">
       <scroll-view
         className="Container"
         scroll-orientation="vertical"
-        style={{ width: "100%", height: "100%" }}
+        style="width:100%;height:100%;"
       >
         <view>
           <text className="HeaderTitle">Recently Autopsied</text>
+
           <view className="Grid">
             {reviews.map((review) => (
               <ReviewCard

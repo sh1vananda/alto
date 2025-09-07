@@ -1,3 +1,5 @@
+// ReviewDetailScreen.tsx
+
 import { useState, useEffect } from "@lynx-js/react";
 import { client, urlFor } from "../lib/sanity.client.js";
 import PortableTextLynx from "../components/PortableTextLynx.js";
@@ -115,13 +117,12 @@ export default function ReviewDetailScreen({
   const imageToDisplay = review.heroImage || review.moviePoster;
 
   return (
-    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
+    <view className="SafeArea">
       <scroll-view
         className="Container"
         scroll-orientation="vertical"
-        style={{ width: "100%", height: "100%" }}
+        style="width:100%;height:100%;"
       >
-        {/* THE DEFINITIVE FIX: Add a single content wrapper view */}
         <view>
           <view className="HeroContainer">
             <image
@@ -132,6 +133,7 @@ export default function ReviewDetailScreen({
               <text className="BackButtonText">&lt;</text>
             </view>
           </view>
+
           <view className="HeaderContent">
             <text className="Title">{review.title}</text>
             <text className="Subtitle">
@@ -139,12 +141,15 @@ export default function ReviewDetailScreen({
               {review.score}/10
             </text>
           </view>
+
           <view className="VizContainer">
             <RadarChart data={attributeData} />
           </view>
+
           <view className="VizContainer">
             <BooGauge data={booGaugeData} />
           </view>
+
           <view className="BodyContainer">
             <PortableTextLynx value={review.body} />
           </view>

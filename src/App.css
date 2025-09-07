@@ -1,21 +1,40 @@
-/* src/App.css */
-
-/*
-============================================
-CORE LAYOUT & GLOBAL STYLES
-============================================
-*/
+/* App.css */
 
 .SafeArea {
   flex: 1;
   background-color: #111111;
   padding-top: 44px;
   padding-bottom: 34px;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .Container {
   flex: 1;
   background-color: #111111;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.Grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 12px;
+
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.BodyContainer {
+  padding: 16px;
+
+  overflow-y: auto;
+  flex: 1 1 auto;
 }
 
 .CenterContainer {
@@ -30,32 +49,12 @@ CORE LAYOUT & GLOBAL STYLES
   font-size: 18px;
 }
 
-/*
-============================================
-HOME SCREEN
-============================================
-*/
-
 .HeaderTitle {
   font-size: 32px;
   color: #ededed;
   padding: 16px;
   font-weight: bold;
 }
-
-.Grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 12px;
-}
-
-/*
-============================================
-REVIEW CARD COMPONENT
-============================================
-*/
 
 .CardContainer {
   width: 48%;
@@ -89,12 +88,6 @@ REVIEW CARD COMPONENT
   color: #a0a0a0;
   font-size: 12px;
 }
-
-/*
-============================================
-REVIEW DETAIL SCREEN
-============================================
-*/
 
 .HeroContainer {
   position: relative;
@@ -135,22 +128,12 @@ REVIEW DETAIL SCREEN
   margin-top: 4px;
 }
 
-.BodyContainer {
-  padding: 16px;
-}
-
 .VizContainer {
   margin: 16px;
   padding: 16px;
   background-color: #222222;
   border-radius: 8px;
 }
-
-/*
-============================================
-PORTABLE TEXT RENDERER
-============================================
-*/
 
 .PortableTextContainer {
   display: flex;
@@ -164,12 +147,6 @@ PORTABLE TEXT RENDERER
   line-height: 1.6;
   text-align: justify;
 }
-
-/*
-============================================
-BOO GAUGE & FINGERPRINT COMPONENTS
-============================================
-*/
 
 .BooGaugeContainer {
   display: flex;
