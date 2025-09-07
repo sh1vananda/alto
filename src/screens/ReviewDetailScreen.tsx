@@ -1,5 +1,3 @@
-// ReviewDetailScreen.tsx
-
 import { useState, useEffect } from "@lynx-js/react";
 import { client, urlFor } from "../lib/sanity.client.js";
 import PortableTextLynx from "../components/PortableTextLynx.js";
@@ -117,7 +115,7 @@ export default function ReviewDetailScreen({
   const imageToDisplay = review.heroImage || review.moviePoster;
 
   return (
-    <view className="SafeArea">
+    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
       <scroll-view
         className="Container"
         scroll-orientation="vertical"

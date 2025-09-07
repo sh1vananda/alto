@@ -1,5 +1,3 @@
-// src/screens/HomeScreen.tsx
-
 import { useState, useEffect } from "@lynx-js/react";
 import { client } from "../lib/sanity.client.js";
 import ReviewCard from "../components/ReviewCard.js";
@@ -45,7 +43,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   }
 
   return (
-    <view className="SafeArea">
+    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
       <scroll-view
         className="Container"
         scroll-orientation="vertical"
@@ -53,7 +51,6 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       >
         <view>
           <text className="HeaderTitle">Recently Autopsied</text>
-
           <view className="Grid">
             {reviews.map((review) => (
               <ReviewCard
