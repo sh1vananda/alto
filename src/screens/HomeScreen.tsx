@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "@lynx-js/react";
 import { client } from "../lib/sanity.client.js";
-import ReviewCard from "../components/ReviewCard";
-
+import ReviewCard from "../components/ReviewCard.js";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface Review {
@@ -46,19 +45,29 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   }
 
   return (
-    <view className="Container" style={{ overflow: "scroll" }}>
-      <text className="HeaderTitle">Recently Autopsied</text>
-      <view className="Grid">
-        {reviews.map((review) => (
-          <ReviewCard
-            key={review._id}
-            review={review}
-            onTap={() =>
-              navigation.navigate("ReviewDetail", { slug: review.slug.current })
-            }
-          />
-        ))}
-      </view>
+    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
+      <scroll-view
+        className="Container"
+        scroll-orientation="vertical"
+        style={{ width: "100%", height: "100%" }}
+      >
+        <view>
+          <text className="HeaderTitle">Recently Autopsied</text>
+          <view className="Grid">
+            {reviews.map((review) => (
+              <ReviewCard
+                key={review._id}
+                review={review}
+                onTap={() =>
+                  navigation.navigate("ReviewDetail", {
+                    slug: review.slug.current,
+                  })
+                }
+              />
+            ))}
+          </view>
+        </view>
+      </scroll-view>
     </view>
   );
 }

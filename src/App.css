@@ -1,5 +1,18 @@
 /* src/App.css */
 
+/*
+============================================
+CORE LAYOUT & GLOBAL STYLES
+============================================
+*/
+
+.SafeArea {
+  flex: 1;
+  background-color: #111111;
+  padding-top: 44px;
+  padding-bottom: 34px;
+}
+
 .Container {
   flex: 1;
   background-color: #111111;
@@ -17,6 +30,12 @@
   font-size: 18px;
 }
 
+/*
+============================================
+HOME SCREEN
+============================================
+*/
+
 .HeaderTitle {
   font-size: 32px;
   color: #ededed;
@@ -31,6 +50,12 @@
   justify-content: space-between;
   padding: 0 12px;
 }
+
+/*
+============================================
+REVIEW CARD COMPONENT
+============================================
+*/
 
 .CardContainer {
   width: 48%;
@@ -65,6 +90,12 @@
   font-size: 12px;
 }
 
+/*
+============================================
+REVIEW DETAIL SCREEN
+============================================
+*/
+
 .HeroContainer {
   position: relative;
   width: 100%;
@@ -78,7 +109,7 @@
 
 .BackButton {
   position: absolute;
-  top: 40px;
+  top: 10px;
   left: 16px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
@@ -115,6 +146,12 @@
   border-radius: 8px;
 }
 
+/*
+============================================
+PORTABLE TEXT RENDERER
+============================================
+*/
+
 .PortableTextContainer {
   display: flex;
   flex-direction: column;
@@ -127,6 +164,12 @@
   line-height: 1.6;
   text-align: justify;
 }
+
+/*
+============================================
+BOO GAUGE & FINGERPRINT COMPONENTS
+============================================
+*/
 
 .BooGaugeContainer {
   display: flex;
@@ -145,7 +188,9 @@
   width: 160px;
   height: 160px;
   border-radius: 80px;
-  border: 8px solid #ffffff;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,7 +210,6 @@
   row-gap: 20px;
 }
 
-/* --- Fingerprint (re-uses GaugeItem styles) --- */
 .FingerprintContainer {
   display: flex;
   flex-direction: column;
