@@ -1,0 +1,62 @@
+/* src/App.css */
+
+.Container {
+  flex: 1;
+  background-color: #111111;
+}
+
+.HeaderTitle {
+  font-size: 32px;
+  /* You may need to specify your Bebas Neue font here */
+  color: #ededed;
+  padding: 16px;
+}
+
+.Grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+/* ReviewCard styles */
+.CardContainer {
+  width: 48%; /* Creates a two-column layout */
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative; /* Needed for the overlay */
+}
+
+.Poster {
+  width: 100%;
+  aspect-ratio: 0.666; /* 2:3 ratio */
+}
+
+.TextOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.Title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Score {
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
+.LoadingContainer {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+}
