@@ -3,7 +3,7 @@
 import { useState, useCallback } from "@lynx-js/react";
 
 import HomeScreen from "../screens/HomeScreen";
-import ReviewDetailScreen from "../screens/ReviewDetailScreen";
+import ReviewDetailScreen from "../screens/ReviewDetailScreen.js";
 
 export type NavParams = { slug: string };
 export type ScreenName = "Home" | "ReviewDetail";

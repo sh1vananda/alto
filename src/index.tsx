@@ -1,14 +1,13 @@
-// src/App.tsx
+// src/index.tsx
 
-import React from "react";
-import AppNavigator from "./navigation/AppNavigator";
-import { StatusBar } from "react-lynx"; // Or from 'expo-status-bar'
+import "@lynx-js/preact-devtools";
+import "@lynx-js/react/debug";
+import { root } from "@lynx-js/react";
 
-export default function App() {
-  return (
-    <>
-      <AppNavigator />
-      <StatusBar style="light" />
-    </>
-  );
+import { App } from "./App.js";
+
+root.render(<App />);
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept();
 }

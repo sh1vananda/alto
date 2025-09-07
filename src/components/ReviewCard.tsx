@@ -1,7 +1,6 @@
 // src/components/ReviewCard.tsx
 
 import { urlFor } from "../lib/sanity.client.js";
-
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface ReviewCardProps {

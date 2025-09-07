@@ -14,13 +14,9 @@ interface Review {
   score: number;
 }
 
-type NavigateFunction = (
-  screen: "ReviewDetail",
-  params: { slug: string }
-) => void;
 interface HomeScreenProps {
   navigation: {
-    navigate: NavigateFunction;
+    navigate: (screen: "ReviewDetail", params: { slug: string }) => void;
   };
 }
 
@@ -44,7 +40,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
   if (isLoading) {
     return (
       <view className="CenterContainer">
-        <text style={{ color: "#EDEDED" }}>Loading Reviews...</text>
+        <text className="LoadingText">Loading Reviews...</text>
       </view>
     );
   }

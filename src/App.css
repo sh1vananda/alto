@@ -5,18 +5,23 @@
   background-color: #111111;
 }
 
-.HeaderTitle {
-  font-size: 32px;
-  color: #ededed;
-  padding: 16px;
-}
-
-.LoadingContainer,
 .CenterContainer {
   flex: 1;
   justify-content: center;
   align-items: center;
   background-color: #111111;
+}
+
+.LoadingText {
+  color: #ededed;
+  font-size: 18px;
+}
+
+.HeaderTitle {
+  font-size: 32px;
+  color: #ededed;
+  padding: 16px;
+  font-weight: bold;
 }
 
 .Grid {
@@ -75,13 +80,18 @@
   position: absolute;
   top: 40px;
   left: 16px;
-  padding: 8px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 36px;
   height: 36px;
   justify-content: center;
   align-items: center;
+}
+
+.BackButtonText {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .HeaderContent {
@@ -103,6 +113,19 @@
   padding: 16px;
   background-color: #222222;
   border-radius: 8px;
+}
+
+.PortableTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.PortableTextParagraph {
+  color: #a0a0a0;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .BooGaugeContainer {
@@ -142,6 +165,7 @@
   row-gap: 20px;
 }
 
+/* --- Fingerprint (re-uses GaugeItem styles) --- */
 .FingerprintContainer {
   display: flex;
   flex-direction: column;

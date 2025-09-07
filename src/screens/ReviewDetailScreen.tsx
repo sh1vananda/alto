@@ -88,7 +88,7 @@ export default function ReviewDetailScreen({
   if (isLoading) {
     return (
       <view className="CenterContainer">
-        <text style={{ color: "#FFF" }}>Loading...</text>
+        <text className="LoadingText">Loading...</text>
       </view>
     );
   }
@@ -96,7 +96,7 @@ export default function ReviewDetailScreen({
   if (!review) {
     return (
       <view className="CenterContainer">
-        <text style={{ color: "#FFF" }}>Review not found.</text>
+        <text className="LoadingText">Review not found.</text>
       </view>
     );
   }
@@ -133,9 +133,7 @@ export default function ReviewDetailScreen({
           className="HeroImage"
         />
         <view className="BackButton" bindtap={navigation.goBack}>
-          <text style={{ color: "#FFF", fontSize: 24, fontWeight: "bold" }}>
-            &lt;
-          </text>
+          <text className="BackButtonText">&lt;</text>
         </view>
       </view>
 

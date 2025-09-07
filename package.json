@@ -9,7 +9,11 @@
     "preview": "rspeedy preview"
   },
   "dependencies": {
-    "@lynx-js/react": "^0.112.5"
+    "@lynx-js/react": "^0.112.5",
+    "@portabletext/react": "^4.0.3",
+    "@sanity/client": "^7.11.0",
+    "@sanity/image-url": "^1.2.0",
+    "react-circular-progressbar": "^2.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
