@@ -1,62 +1,39 @@
 /* src/App.css */
-
-.Container {
-  flex: 1;
-  background-color: #111111;
-}
-
-.HeaderTitle {
-  font-size: 32px;
-  /* You may need to specify your Bebas Neue font here */
-  color: #ededed;
-  padding: 16px;
-}
-
-.Grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 12px;
-}
-
-/* ReviewCard styles */
-.CardContainer {
-  width: 48%; /* Creates a two-column layout */
-  margin-bottom: 16px;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative; /* Needed for the overlay */
-}
-
-.Poster {
+.HeroContainer {
+  position: relative;
   width: 100%;
-  aspect-ratio: 0.666; /* 2:3 ratio */
+  height: 250px;
 }
-
-.TextOverlay {
+.HeroImage {
+  width: 100%;
+  height: 100%;
+}
+.BackButton {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 40px;
+  left: 16px;
   padding: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.Title {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.Score {
-  color: #a0a0a0;
-  font-size: 12px;
-}
-
-.LoadingContainer {
-  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: 36px;
+  height: 36px;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
+}
+.HeaderContent {
+  padding: 16px;
+}
+.Subtitle {
+  color: #a0a0a0;
+  font-size: 16px;
+  margin-top: 4px;
+}
+.VizContainer {
+  margin: 16px;
+  padding: 8px;
+  background-color: #222222;
+  border-radius: 8px;
+}
+.BodyContainer {
+  padding: 16px;
 }

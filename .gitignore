@@ -6,7 +6,6 @@
 # Dist
 node_modules
 dist/
-lynx/node_modules
 
 # IDE
 .vscode/*
