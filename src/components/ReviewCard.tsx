@@ -18,11 +18,14 @@ export default function ReviewCard({ review, onTap }: ReviewCardProps) {
     : "";
 
   return (
-    <view className="CardContainer" bindtap={onTap}>
-      <image src={posterUrl} className="Poster" />
-      <view className="TextOverlay">
-        <text className="Title">{review.title}</text>
-        <text className="Score">{review.score}/10</text>
+    <view
+      className="w-[48%] mb-4 rounded-lg overflow-hidden relative"
+      bindtap={onTap}
+    >
+      <image src={posterUrl} className="w-full aspect-[2/3]" />
+      <view className="absolute bottom-0 left-0 right-0 p-2 bg-black/60">
+        <text className="text-white text-sm font-bold">{review.title}</text>
+        <text className="text-secondary text-xs">{review.score}/10</text>
       </view>
     </view>
   );

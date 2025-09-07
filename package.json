@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "rspeedy build",
     "dev": "rspeedy dev",
+    "build": "rspeedy build",
     "lint": "eslint .",
     "preview": "rspeedy preview"
   },
@@ -13,7 +13,7 @@
     "@portabletext/react": "^4.0.3",
     "@sanity/client": "^7.11.0",
     "@sanity/image-url": "^1.2.0",
-    "react-circular-progressbar": "^2.2.0"
+    "concurrently": "^9.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
@@ -21,13 +21,17 @@
     "@lynx-js/qrcode-rsbuild-plugin": "^0.4.1",
     "@lynx-js/react-rsbuild-plugin": "^0.10.13",
     "@lynx-js/rspeedy": "^0.11.0",
+    "@lynx-js/tailwind-preset": "^0.2.0",
     "@lynx-js/types": "3.4.11",
     "@rsbuild/plugin-type-check": "1.2.4",
     "@types/react": "^18.3.23",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.38.0"
   },

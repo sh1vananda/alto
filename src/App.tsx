@@ -1,6 +1,6 @@
 // src/App.tsx
 
-import "./App.css";
+import "./app.css";
 
 import AppNavigator from "./navigation/AppNavigator.js";
 

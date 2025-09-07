@@ -76,16 +76,32 @@ export default function ReviewDetailScreen({
 
   if (isLoading) {
     return (
-      <view className="CenterContainer">
-        <text className="LoadingText">Loading...</text>
+      <view
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#111",
+        }}
+      >
+        <text style={{ color: "#EDEDED", fontSize: 18 }}>Loading...</text>
       </view>
     );
   }
 
   if (!review) {
     return (
-      <view className="CenterContainer">
-        <text className="LoadingText">Review not found.</text>
+      <view
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#111",
+        }}
+      >
+        <text style={{ color: "#EDEDED", fontSize: 18 }}>
+          Review not found.
+        </text>
       </view>
     );
   }
@@ -115,12 +131,15 @@ export default function ReviewDetailScreen({
   const imageToDisplay = review.heroImage || review.moviePoster;
 
   return (
-    <view className="SafeArea" style={{ flex: 1, display: "flex" }}>
-      <scroll-view
-        className="Container"
-        scroll-orientation="vertical"
-        style="width:100%;height:100%;"
-      >
+    <view
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#111",
+      }}
+    >
+      <scroll-view scroll-orientation="vertical" style={{ flex: 1 }}>
         <view>
           <view className="HeroContainer">
             <image
